@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi amada Andrea ❤️</title>
+    <style>
+        /* Definición de variables de color (Verde Olivo) */
+        :root {
+            --verde-olivo-principal: #6b8e23; /* OliveDrab */
+            --verde-olivo-oscuro: #556b2f; /* DarkOliveGreen */
+            --verde-olivo-claro: #acc967;
+            --fondo-crema: #fafaf0;
+            --texto-oscuro: #333;
+            --blanco-puro: #ffffff;
+            --rojo-corazon: #d81b60; /* Mantenemos el rojo para contraste de amor */
+        }
+
+        /* Estilos generales */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', 'Times New Roman', Times, serif; /* Fuente más elegante */
+            background-color: var(--fondo-crema);
+            color: var(--texto-oscuro);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden; /* Evita desplazamiento horizontal */
+        }
+
+        /* Tarjeta principal */
+        .container {
+            background: var(--blanco-puro);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            max-width: 800px;
+            width: 90%;
+            margin: 40px 20px;
+            z-index: 10;
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--verde-olivo-oscuro);
+            font-size: 2.8em;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        /* --- SECCIÓN DE LA GALERÍA --- */
+        .gallery-title {
+            color: var(--verde-olivo-principal);
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .gallery {
+            display: grid;
+            /* Móvil primero: 2 columnas por defecto */
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        /* Ajuste para pantallas más grandes (tablets/PC) */
+        @media (min-width: 600px) {
+            .gallery {
+                grid-template-columns: repeat(3, 1fr); /* 3 columnas en PC */
+            }
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            aspect-ratio: 1 / 1; /* Hace las fotos cuadradas automáticamente */
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03); /* Efecto zoom suave */
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ajusta la foto sin deformarla */
+            display: block;
+        }
+
+        /* --- FIN DE LA GALERÍA --- */
+
+        /* Botón interactivo */
+        .btn {
+            background-color: var(--verde-olivo-principal);
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(107, 142, 35, 0.3);
+            font-family: sans-serif; /* Botón con fuente más moderna */
+        }
+
+        .btn:hover {
+            background-color: var(--verde-olivo-oscuro);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(85, 107, 47, 0.5);
+        }
+
+        /* Mensaje que se revelará */
+        #mensaje-oculto {
+            display: none;
+            margin-top: 25px;
+            padding: 25px;
+            background-color: #f1f8e9; /* Verde muy clarito */
+            border-left: 5px solid var(--verde-olivo-principal);
+            border-radius: 8px;
+            font-style: italic;
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Corazones flotantes */
+        .heart {
+            position: fixed; /* Fixed para que salgan desde abajo de la pantalla visible */
+            color: var(--rojo-corazon);
+            user-select: none;
+            animation: floatUp 4s ease-in forwards;
+            z-index: 1;
+            opacity: 0;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Para mi hermosa Andrea ❤️</h1>
+        <p>Andrea, eres la luz que ilumina mis días. Desde los atardeceres en Mazatlán hasta los momentos tranquilos en casa con el gato, cada instante a tu lado es un regalo que atesoro.</p>
+        <p>He creado este pequeño espacio para recordarte cuánto te amo y mostrarte algunos de nuestros momentos favoritos.</p>
+
+        <h2 class="gallery-title">Nuestros Momentos</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/400x400.png?text=Foto+Con+Andrea+1" alt="Momento juntos 1">
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/400x400.png?text=Foto+Con+Andrea+2" alt="Momento juntos 2">
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/400x400.png?text=Foto+Con+Andrea+3" alt="Momento juntos 3">
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/400x400.png?text=Foto+Con+Andrea+4" alt="Momento juntos 4">
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/400x400.png?text=Foto+Con+Andrea+5" alt="Momento juntos 5">
+            </div>
+            <div class="gallery-item">
+                <img src="https://via.placeholder.com/400x400.png?text=Foto+Con+Andrea+6" alt="Momento juntos 6">
+            </div>
+        </div>
+        
+        <button class="btn" onclick="revelarMensaje()">Tengo algo más para ti...</button>
+
+        <div id="mensaje-oculto">
+            <p>"Ni todo el código del mundo podría expresar la inmensidad de mi amor por ti. Eres mi compañera, mi mejor amiga y el amor de mi vida. Gracias por existir."</p>
+            <p><strong>- Jose</strong></p>
+        </div>
+    </div>
+
+    <script>
+        function revelarMensaje() {
+            const mensaje = document.getElementById('mensaje-oculto');
+            const boton = document.querySelector('.btn');
+
+            mensaje.style.display = 'block';
+            boton.textContent = '¡Te amo eternamente!';
+            boton.style.backgroundColor = 'var(--verde-olivo-oscuro)';
+            boton.disabled = true;
+            boton.style.cursor = 'default';
+
+            crearLluviaDeCorazones();
+        }
+
+        function crearLluviaDeCorazones() {
+            const cantidadCorazones = 50; 
+
+            for (let i = 0; i < cantidadCorazones; i++) {
+                setTimeout(() => {
+                    const corazon = document.createElement('div');
+                    corazon.innerHTML = '❤️';
+                    corazon.classList.add('heart');
+                    corazon.style.left = Math.random() * 100 + 'vw';
+                    corazon.style.fontSize = (Math.random() * 25 + 15) + 'px';
+                    corazon.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                    document.body.appendChild(corazon);
+
+                    setTimeout(() => { corazon.remove(); }, 5000);
+                }, i * 150); 
+            }
+        }
+    </script>
+</body>
+</html>
